@@ -200,6 +200,6 @@
 
 ![image223](../media/img-20250610101358.png)
 
-上传代码完成后，插上蓝牙模块，打开App，单击 **CONNECT** 连接上蓝牙，点击手机APP上![image224](../media/2ea70aea70f675bf3683c6b8d849f2c7.png)以控制LED。当您按住发送‘B’时，LED将打开，而当您松开发送‘S’时，LED将关闭。
+上传代码完成后，插上蓝牙模块，打开App，单击 **CONNECT** 连接上蓝牙，点击手机APP上![image224](../media/2ea70aea70f675bf3683c6b8d849f2c7.png)以控制LED。当您按住发送`B`时，LED将打开，而当您松开发送`S`时，LED将关闭。
 
 ![image225](../media/img-20250610101546.png)

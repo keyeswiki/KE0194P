@@ -81,22 +81,19 @@ CC2541 蓝牙低功耗（BLE）系统级芯片（SoC）而设计的。
 
 **安卓系统手机APP**
 
-1\. 扫码下载 ![image153](../media/e920dec9583352e3505ef6662868ec1a.png)
-或者进入APP下载链接：<http://8.210.52.206/Tank_Car.apk>
+1\. 扫码下载 ![image153](../media/e920dec9583352e3505ef6662868ec1a.png)或者进入APP下载链接：<http://8.210.52.206/Tank_Car.apk>
 
 **注意：当我们扫码下载的时候需要使用手机浏览器的扫码功能扫码打开，使用微信扫码可能无效。**
 
-2.  下载后安装，安装成功，显示图标如下。
+2\.  下载后安装，安装成功，显示图标如下。
 
 ![image154](../media/9df8897348d5a2fbd8f03ac59bb6dbfc.png)
 
-3\.
-**一定要先打开手机上的蓝牙开关，再点击上图图标**，进入APP，显示如下图。
+3\. **一定要先打开手机上的蓝牙开关，再点击上图图标**，进入APP，显示如下图。
 
 ![image155](../media/ed8437dc27ef31eda631a1c3e479d9c4.jpg)
 
-4\.
-上传代码成功后，正确插好蓝牙模块，上电后，蓝牙模块上LED闪烁。点击APP![image156](../media/36b1f3e7cfca7e69178124d46abfa609.png)图标，搜索到蓝牙，显示如下图。
+4\. 上传代码成功后，正确插好蓝牙模块，上电后，蓝牙模块上LED闪烁。点击APP![image156](../media/36b1f3e7cfca7e69178124d46abfa609.png)图标，搜索到蓝牙，显示如下图。
 
 ![image157](../media/bb404d78305d03db3a7f177559be1054.jpg)
 
@@ -107,15 +104,15 @@ CC2541 蓝牙低功耗（BLE）系统级芯片（SoC）而设计的。
 
 **苹果系统手机APP**
 
-1.  打开App Store。
+1\.  打开App Store。
 
 ![image159](../media/af6836387c7ddd16faa20396439cf0dd.png)
 
-2.  点击搜索，搜索keyes，下载搜索到的keyes BT car。
+2\.  点击搜索，搜索keyes，下载搜索到的keyes BT car。
 
 ![image160](../media/6ca6b22d85030f744a22a61abb70c261.png)
 
-3.  打开keyes BT car。
+3\.  打开keyes BT car。
 
 ![image161](../media/3c0249b480b0453172eb46c29d44078a.png)
 
@@ -124,7 +121,7 @@ CC2541 蓝牙低功耗（BLE）系统级芯片（SoC）而设计的。
 
 ![image162](../media/5e92657dcaeaebeccbe0ef212daf04ec.png)
 
-5.  点击坦克车的图片![image163](../media/94f5d814eb43dc21ebb341134e4e3ef4.png)按钮，进入控制坦克车的界面
+5\.  点击坦克车的图片![image163](../media/94f5d814eb43dc21ebb341134e4e3ef4.png)按钮，进入控制坦克车的界面
 
 ![image164](../media/53cf64282791382b0dbdd7d9059bf99d.jpg)
 
@@ -144,8 +141,7 @@ CC2541 蓝牙低功耗（BLE）系统级芯片（SoC）而设计的。
 
 ![image169](../media/img-20250618134635.png)
 
-上传代码完成后，单击![image170](../media/img-20250618112826.png)，在串口监视器窗口设置波特率为9600，插上蓝牙模块，打开App，单击
-**CONNECT**
-连接上蓝牙，点击手机APP上![image171](../media/2ea70aea70f675bf3683c6b8d849f2c7.png)以控制LED。当您按住发送`B’‘时，LED将打开，而当您松开发送`S’’时，LED将关闭。
+上传代码完成后，单击![image170](../media/img-20250618112826.png)，在串口监视器窗口设置波特率为9600，插上蓝牙模块，打开App，单击**CONNECT**
+连接上蓝牙，点击手机APP上![image171](../media/2ea70aea70f675bf3683c6b8d849f2c7.png)以控制LED。当您按住发送`B`时，LED将打开，而当您松开发送`S`时，LED将关闭。
 
 ![image172](../media/img-20250618134559.png)

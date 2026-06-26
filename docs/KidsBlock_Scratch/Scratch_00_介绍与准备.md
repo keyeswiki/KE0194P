@@ -9,7 +9,7 @@
 
 **注意：这里是以Windows系统为例，macOS 系统可以以此作为参考。**
 
-1\.  点击链接 <https://xiazai.keyesrobot.cn/KidsBlock.exe> 下载软件。
+1\. 点击链接 <https://xiazai.keyesrobot.cn/KidsBlock.exe> 下载软件。
 
 2\. 双击软件安装包![image1](../media/1-1750066293489-1.png)，选择 “**仅为我安装**”，选择 “**下一步(N)**”。
 

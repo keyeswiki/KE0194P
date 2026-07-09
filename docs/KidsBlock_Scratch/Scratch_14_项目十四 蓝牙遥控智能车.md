@@ -35,9 +35,9 @@
 
 ![image313](../media/c717a7c82b6884f3c6d35cc091bb030d.png)
 
-接线注意：蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、-（GND）、+（VCC），而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
+接线注意：蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、GND、VCC，而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
 
-左、右两电机分别对应的连接到电机驱动扩展板上的接口A和接口B；蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、-（GND）、+（VCC），而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
+左、右两电机分别对应的连接到电机驱动扩展板上的接口A和接口B；蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、GND、VCC，而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
 
 **测试代码：**
 

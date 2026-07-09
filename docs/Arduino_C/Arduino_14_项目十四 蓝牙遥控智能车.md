@@ -35,9 +35,9 @@
 
 ![image195](../media/c717a7c82b6884f3c6d35cc091bb030d.png)
 
-接线注意：蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、-（GND）、+（VCC），而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
+接线注意：蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、GND、VCC，而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
 
-左、右两电机分别对应的连接到电机驱动扩展板上的接口A和接口B；蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、-（GND）、+（VCC），而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
+左、右两电机分别对应的连接到电机驱动扩展板上的接口A和接口B；蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、GND、VCC，而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
 
 **测试代码：**
 
@@ -111,17 +111,17 @@ void back() { //小车后退
 
 void turnL() { //小车左转
   matrix_display(left);  //显示左转的图案
-  digitalWrite(MA, HIGH); //电机A逆时针转
+  digitalWrite(MA, LOW); //电机A顺时针转
   analogWrite(PWMA, 200); //电机A速度为200
-  digitalWrite(MB, LOW); //电机B逆时针转
+  digitalWrite(MB, HIGH); //电机B顺时针转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
 void turnR() { //小车右转
   matrix_display(right);  //显示右转的图案
-  digitalWrite(MA, LOW); //电机A正转
+  digitalWrite(MA, HIGH); //电机A逆时针转
   analogWrite(PWMA, 200); //电机A速度为200
-  digitalWrite(MB, LOW); //电机B反转
+  digitalWrite(MB, LOW); //电机B逆时针转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
@@ -190,7 +190,7 @@ void IIC_end()
 }
 ```
 
-好了，按住蓝牙APP的前进、后退、左转弯、右转弯、停止、左旋转、右旋转的按钮控制桌面迷你蓝牙智能车分别前进、后退、左转弯、右转弯、停止、左旋转、右旋转的程序代码全编写完了。上传程序，看看效果。
+好了，按住蓝牙APP的前进、后退、左旋转、右旋转、停止的按钮控制桌面迷你蓝牙智能车分别前进、后退、左旋转、右旋转、停止的程序代码全编写完了。上传程序，看看效果。
 
 **测试结果：**
 

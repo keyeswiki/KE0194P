@@ -27,7 +27,7 @@
 
 LED点阵屏接IIC管脚（G、5V、A4、A5）；
 
-蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、-（GND）、+（VCC），而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
+蓝牙模块的RXD、TXD、GND、VCC分别对应的接到电机驱动扩展板上的TX、RX、GND、VCC，而蓝牙模块的STATE和BRK两引脚不需要接，电源接到BAT接口。
 
 ![image203](../media/5db7458e37c2b2966f8a70dc8f6cf658.png)
 
@@ -42,10 +42,7 @@ LED点阵屏接IIC管脚（G、5V、A4、A5）；
   蓝牙控制多功能智能坦克车
   http://www.keyes-robot.com
 */
-#include <IRremote.h>  //导入红外的库
-int RECV_PIN = 3; //定义IO口D3
-IRrecv irrecv(RECV_PIN);
-decode_results results;//声明一个IRremote库函数独有的变量类型
+
 #include <Servo.h>
 Servo myservo;  // create servo object to control a servo
 //数组，用于储存图案的数据，可以自己算也可以从取摸工具中得到
@@ -66,7 +63,6 @@ int MB = 4; //定义电机A方向控制引脚为D4
 int PWMB = 5; //定义电机A速度控制引脚为D5
 int speeds = 150; //初始化速度为150
 char blue_val;
-int IR_val;
 int trigPin = 12; //TRIG引脚接D12
 int echoPin = 13; //ECHO引脚接D13
 int distance, distance_l, distance_r;
@@ -87,7 +83,6 @@ void setup() {
   //设置引脚为输出
   pinMode(SCL_Pin, OUTPUT);
   pinMode(SDA_Pin, OUTPUT);
-  irrecv.enableIRIn();// 使能红外接收
   //清屏
   matrix_display(clear);
   matrix_display(start01);
@@ -106,19 +101,6 @@ void loop() {
       case  'U':  avoid();     break;  //接收到‘Y’，进入避障模式
       case  'X':  light_follow();   break;  //接收到‘X’，寻光模式
     }
-  }
-
-  if (irrecv.decode(&results)) { //是否接收到红外遥控信号
-    IR_val = results.value;
-    Serial.println(IR_val, HEX); //串口打印数据
-    switch (IR_val) {
-      case 0xFF629D:  advance();  break;  //前进
-      case 0xFFA857:  back();     break;  //后退
-      case 0xFF22DD:  turnL();    break;  //左转
-      case 0xFFC23D:  turnR();    break;  //右转
-      case 0xFF02FD:  stopp();    break;  //停止
-    }
-    irrecv.resume();// 接收下个数据
   }
 
 }
@@ -331,4 +313,18 @@ void IIC_end()
 
 **测试结果：**
 
-将驱动扩展板堆叠在UNO plus板上，上传好代码，按照接线图接线，将拨码开关拨至ON端后，手机APP连接蓝牙成功后，我们就能用手机APP控制智能车运动了。我们可以通过按下对应按钮实现对应功能，通过停止钮来停止功能。点击一下![image204](../media/caaaee6feda51e5575ba655f324d40c4.png)按，开启手机重力感应控制，拿起手机从不同的方向移动手机，智能车会自动的移动，再点击一下![image205](../media/caaaee6feda51e5575ba655f324d40c4.png)按钮，退出重力感应控制。
+将驱动扩展板堆叠在UNO plus板上，上传好代码，按照接线图接线，将拨码开关拨至ON端后，手机APP连接蓝牙成功后，我们就能用手机APP控制智能车运动了。我们可以通过按下对应按钮实现对应功能，通过停止钮来停止功能。
+
+| 按钮:![image180](../media/1233714e0234b6245cedbc3eff07864d.png) |                            | 功能：配对连接HM-10蓝牙模块                                                               |
+|--------------------------------------------------------------|----------------------------|-------------------------------------------------------------------------------------------|
+| 按钮:![image181](../media/35b811ab85a240ba2eabeffd8379b337.png) |                            | 功能：进入蓝牙控制界面                                                                    |
+| 按钮:![image182](../media/38f4b9a388eb3633c4b0f5c04545c130.png) |                            | 功能：断开蓝牙连接                                                                        |
+| 按钮:![image183](../media/720164d43dbe50d388f5887eafec078b.png) | 控制字符：按下：F；松开：S | 功能：按下，小车前进；松开就停止                                                          |
+| 按钮:![image184](../media/dd17f04276c6ec578ce69bdd6b709ab0.png) | 控制字符：按下：B；松开：S | 功能：按下，小车后退；松开就停止                                                          |
+| 按钮:![image185](../media/5f178f0b7c951228333fdc5ed4917ed2.png) | 控制字符：按下：L；松开：S | 功能：按下，小车左旋转；松开就停止                                                        |
+| 按钮:![image186](../media/e311a61ee103c36b8c79121db9de6fb2.png) | 控制字符：按下：R；松开：S | 功能：按下，小车右旋转；松开就停止                                                        |
+| 按钮:![image187](../media/558a091d1dff040217a8c8ec8e3b7cdb.png) | 控制字符： 点击发送：S     | 功能：小车停止，停止所有功能                                                              |
+| 按钮:![image188](../media/1cde47833aec02a65075b02c136d3d4a.png) | 控制字符：                 | 功能：点击一下开启手机方向感应控制，再点击一下退出方向感应控制                            |
+| 按钮:![image189](../media/aabdabfe88c7ab40944f1b59f2b902c6.png) | 控制字符： 点击发送：U     | 功能：开启避障功能，点击![image190](../media/cd86ca672f19353b4ce9a1720895c2c2.png)退出       |
+| 按钮:![image191](../media/23183b80cb7a19fa78cc085299430ff7.png) | 控制字符： 点击发送：X     | 功能：开启寻光功能，点击![image192](../media/cd86ca672f19353b4ce9a1720895c2c2.png)退出       |
+| 按钮:![image193](../media/418535b9bdcc25b1fb706b90205869b2.png) | 控制字符： 点击发送：Y     | 功能：开启超声波跟随功能，点击![image194](../media/cd86ca672f19353b4ce9a1720895c2c2.png)退出 |

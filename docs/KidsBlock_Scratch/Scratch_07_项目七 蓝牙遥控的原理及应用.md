@@ -17,7 +17,7 @@ BT24是一款面向嵌入式开发的‌低功耗串口透传蓝牙模块‌，�
 
 **蓝牙参数：**
 
-- 蓝牙协议: Bluetooth Specification V5.1 BLE
+- 蓝牙协议: 蓝牙V5.1 低功耗BLE
 
 - 工作频率: 2.4GHz ISM band
 
